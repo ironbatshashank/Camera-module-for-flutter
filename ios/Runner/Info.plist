@@ -3,11 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Need it to access gallery or whatever you people call it these days</string>
+	<string>Need it to access gallery</string>
 	<key>NSPhotoUsageDescription</key>
 	<string>Need it to access camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Need it to access mic for video</string>
+	<!-- Didn't add support for ios -->
 
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
