@@ -8,6 +8,7 @@
 	<string>Need it to access camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Need it to access mic for video</string>
+	<!-- Didn't add support for ios -->
 
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
