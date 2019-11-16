@@ -1,44 +1,39 @@
-import 'dart:io';
-import 'dart:async';
-import 'package:image_picker/image_picker.dart';
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() => new _MyAppState();
+void main() {
+  runApp(new MaterialApp(
+    title: "Camera App",
+    home: LandingScreen(),
+    ));
 }
 
-class _MyAppState extends State<MyApp> {
-  File _image;
+class LandingScreen extends StatefulWidget {
+  @override
+  _LandingScreenState createState() => _LandingScreenState();
+}
 
-  Future getImage() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
-      _image = image;
-    });
-  }
-
+class _LandingScreenState extends State<LandingScreen> {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Image Picker',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Image Picker'),
-        ),
-        body: new Center(
-          child: _image == null
-              ? new Text('No Image selected')
-              : new Image.file(_image),
-        ),
-        floatingActionButton: new FloatingActionButton(
-          onPressed: getImage,
-          tooltip: 'Pick Image',
-          child: new Icon(Icons.camera),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Main Screen"),
       ),
+      body: Container(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Text("No Image Selected!"),
+              RaisedButton(onPressed: (){
+
+              },child: Text("Select Image!"),)
+            ],
+          )
+          )
+      )
     );
   }
 }
