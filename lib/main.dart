@@ -13,6 +13,42 @@ class LandingScreen extends StatefulWidget {
 }
 
 class _LandingScreenState extends State<LandingScreen> {
+
+  _openGallery(){
+
+  }
+
+  _openCamera(){
+
+  }
+  
+  Future<void> _showChoiceDialog(BuildContext context){
+    return showDialog(context: context,builder: (BuildContext context){
+      return AlertDialog(
+        title: Text("Make a choice!"),
+        content: SingleChildScrollView(
+          child: ListBody(
+            children: <Widget>[
+              GestureDetector(
+                child: Text("Gallery"),
+                onTap: (){
+                  _openGallery();
+                },
+                ),
+                Padding(padding: EdgeInsets.all(8.0),),
+                GestureDetector(
+                child: Text("Camera"),
+                onTap: (){
+                  _openCamera();
+                },
+                ),
+            ],
+            ),
+        ),
+        );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +62,7 @@ class _LandingScreenState extends State<LandingScreen> {
             children: <Widget>[
               Text("No Image Selected!"),
               RaisedButton(onPressed: (){
-
+                _showChoiceDialog(context);
               },child: Text("Select Image!"),)
             ],
           )
