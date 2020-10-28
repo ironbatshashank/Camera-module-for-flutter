@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(new MaterialApp(
-    title: "Camera App",
+    title: "Camera",
     home: LandingScreen(),
     ));
 }
